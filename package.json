@@ -1,0 +1,44 @@
+{
+  "name": "risk-report-generator",
+  "version": "1.0.0",
+  "description": "מחולל דוחות ניהול סיכונים מקצועי עם אינטגרציה לClaude API",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm start",
+    "build": "npm run build:frontend && npm run build:backend",
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd backend && npm run build",
+    "start": "cd backend && npm start",
+    "test": "npm run test:backend && npm run test:frontend",
+    "test:backend": "cd backend && npm test",
+    "test:frontend": "cd frontend && npm test -- --watchAll=false",
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "setup": "chmod +x setup.sh && ./setup.sh",
+    "start:dev": "chmod +x start.sh && ./start.sh",
+    "health": "curl -s http://localhost:3001/api/health | jq",
+    "logs": "tail -f backend/logs/combined.log"
+  },
+  "keywords": [
+    "risk-management",
+    "reports",
+    "claude-api",
+    "react",
+    "nodejs",
+    "hebrew",
+    "education",
+    "innovation",
+    "ai",
+    "ezra"
+  ],
+  "author": "Dr. Assaf Uzan",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+}
